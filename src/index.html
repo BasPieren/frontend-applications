@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="style/style.css">
   <title>Vue Tutorial</title>
 </head>
 <body>
@@ -66,92 +67,7 @@
     </ol>
   </div>
 
-  <!-- SCRIPT -->
-
-  <script type="text/javascript">
-
-  // APP 1
-
-  var app = new Vue({
-    el:'#app',
-    data: {
-      message: "Hello Vue"
-    }
-  })
-
-  // APP 2
-
-  var app2 = new Vue({
-    el: '#app-2',
-    data: {
-      message: 'You loaded this page on ' + new Date().toLocaleString()
-    }
-  })
-
-  // APP 3
-
-  var app3 = new Vue({
-    el:"#app-3",
-    data: {
-      seen: true
-    }
-  })
-
-  // APP 4
-
-  var app4 = new Vue ({
-    el: "#app-4",
-    data: {
-      todos: [
-        { text: "Learn Javascript"},
-        { text: "Learn Vue"},
-        { text: "Build something awesome"}
-      ]
-    }
-  })
-
-  // APP 5
-
-  var app5 = new Vue({
-    el: "#app-5",
-    data: {
-      message: "Hello Vue.js"
-    },
-    methods: {
-      reverseMessage: function () {
-        this.message = this.message.split("").reverse().join("")
-      }
-    }
-  })
-
-  // APP 6
-
-  var app6 = new Vue({
-    el:"#app-6",
-    data:{
-      message: "Hello Vue!"
-    }
-  })
-
-  // APP 7
-
-  Vue.component("todo-item", {
-    props: ["todo"],
-    template: "<li>{{ todo.text }}</li>"
-  })
-
-  var app7 = new Vue({
-    el: "#app-7",
-    data: {
-      groceryList: [
-        {id: 0, text:'Vegetables'},
-        {id: 1, text:'Cheese'},
-        {id: 2, text:'Whatever else humans are supposed to eat'},
-      ]
-    }
-  })
-
-  </script>
+  <script src="script/script.js" type="text/javascript"></script>
 
 </body>
 </html>
