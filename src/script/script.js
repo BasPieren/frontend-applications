@@ -77,4 +77,25 @@ var app7 = new Vue({
       {id: 2, text:'Whatever else humans are supposed to eat'},
     ]
   }
+
+})
+
+new Vue({
+    el : "#todolist",
+    data : {
+        newtodo : null,
+        todos : ['Boter', 'Kaas', 'Eieren', 'Whisky']
+    },
+    methods : {
+        add : function() {
+            this.todos.push(this.newtodo);
+            this.newtodo = null;
+        },
+
+        remove : function(todo) {
+            this.todos = this.todos.filter(function(t) {
+                return t !== todo;
+            });
+        }
+    }
 })
