@@ -7,8 +7,6 @@ Vue.component('v-header', {
         <ul>
           <li><a href="index.html">Introductie</a></li>
           <li><a href="risico-indicatie.html">Risico Indicatie</a></li>
-          <li><a href="#">Over</a></li>
-          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>`
