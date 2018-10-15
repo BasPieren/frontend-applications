@@ -1,24 +1,22 @@
 {
-  "name":"risicotaxatie-app",
+  "name": "risicotaxatie-app",
   "version": "1.0.0",
-  "description":"Project for the fe-applications course.",
-  "License":"MIT",
-  "keywords":["html", "css", "javascript", "framework", "vue"],
-  "author":"Bas Pieren",
+  "description": "Project for the fe-applications course.",
+  "License": "MIT",
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "framework",
+    "vue"
+  ],
+  "author": "Bas Pieren",
   "dependencies": {
-    "vue": {
-      "version": "2.5.17",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.5.17.tgz",
-      "integrity": "sha512-mFbcWoDIJi0w0Za4emyLiW72Jae0yjANHbCVquMKijcavBGypqlF7zHRgMa5k4sesdv7hv2rB4JPdZfR+TPfhQ=="
-    }
+    "prettier": "^1.14.3",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
   },
-  "devDependencies": {
-    "prettier": {
-      "version": "1.14.3",
-      "resolved": "https://registry.npmjs.org/prettier/-/prettier-1.14.3.tgz",
-      "integrity": "sha512-qZDVnCrnpsRJJq5nSsiHCE3BYMED2OtsI+cmzIzF1QIfqm5ALf8tEJcO27zV1gKNKRPdhjO0dNWnrzssDQ1tFg=="
-    }
-  },
+  "devDependencies": {},
   "scripts": {
     "prjs": "prettier --single-quote --write src/script/*.js"
   }
