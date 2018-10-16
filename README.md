@@ -37,7 +37,14 @@ npm install
 ### Packages and technologies
 This project makes use of the following packages and technologies:
 
+# Dependencies
+These dependencies are needed to run the web application.
+
 * [Vue](https://www.npmjs.com/package/vue)
+
+# devDependencies
+These devdependencies where used during the creation op the web application but are not needed to run it.
+
 * [Prettier](https://www.npmjs.com/package/prettier)
 
 All of these where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures and labs so thats why I also made use of them.
