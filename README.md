@@ -14,15 +14,15 @@ This is the repo for my frontend applications project where I made a web applica
 
 ## To Do
 This is a list of things in want to do in this project.
-- [ X ] Git, npm, and a framework are used
-- [ X ] Data is rendered with a framework
-- [  ] Data can be read and changed
-- [  ] Changes to data are reflected in the interface;
-- [  ] Changes persist across page reloads
-- [  ] Use routing or creating data
+- [X] Git, npm, and a framework are used
+- [X] Data is rendered with a framework
+- [ ] Data can be read and changed
+- [ ] Changes to data are reflected in the interface;
+- [ ] Changes persist across page reloads
+- [ ] Use routing or creating data
 
 ## Description
-This web app is a "Risico Indicatie" that can be used to calculate the risk that a child has to be removed from their parental home due to a number of factors.
+This web app can be used to calculate the risk that a child has to be removed from their parental home due to a number of factors.
 
 ## Installing
 To install this application enter the following into your _terminal_:
