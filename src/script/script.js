@@ -3,7 +3,9 @@
 https://codepen.io/anon/pen/bxjpKG
 
 */
+
 // ------ IMPORT
+
 
 var data =
   [
@@ -339,6 +341,7 @@ var data =
     }
   ]
 
+
 // ------ COMPONENTS
 
 Vue.component('v-header', {
@@ -346,7 +349,7 @@ Vue.component('v-header', {
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Risico indicatie</a></li>
+          <li></li>
         </ul>
       </nav>
     </header>`
@@ -382,6 +385,16 @@ Vue.component('v-aside', {
 });
 
 Vue.component('v-main', {
+  template: `
+    <main>
+      <h2>Risico indicatie</h2>
+      <p>Deze beslissingondersteuningstool kan gebruikt worden door hulpverleners om een objectieve risico-indicatie te krijgen op een zwaardere maatregel op basis van kenmerken van het kind, de ouders en het huishouden.</p>
+      <p>Onder zwaardere maatregelen vallen in dit geval jeugdhulp met verblijf, jeugdbeschermingsmaatregelen en jeugdreclasseringsmaatregelen.</p>
+      <v-question></v-question>
+    </main>`
+});
+
+Vue.component("v-question", {
   data: function() {
     return {
       data
@@ -391,26 +404,30 @@ Vue.component('v-main', {
   // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
 
   computed: {
+    categorie_name: function () {
+      return [...new Set(this.data.map(i => i.Categorie))]
+    },
     awnser_name: function () {
       return [...new Set(this.data.map(i => i.Name))]
     }
   },
 
   // END USE OF SOURCE
+
   template: `
-    <main>
-      <h2>Risico indicatie</h2>
-      <p>Deze beslissingondersteuningstool kan gebruikt worden door hulpverleners om een objectieve risico-indicatie te krijgen op een zwaardere maatregel op basis van kenmerken van het kind, de ouders en het huishouden. Onder zwaardere maatregelen vallen in dit geval jeugdhulp met verblijf, jeugdbeschermingsmaatregelen en jeugdreclasseringsmaatregelen.</p>
-
-      <select>
-        <option>Onbekend</option>
-        <option v-for="name in awnser_name">
-          {{ name }}
-        </option>
-      </select>
-    </main>`
-});
-
+    <section>
+      <article v-for="categorie in categorie_name">
+        <label>{{ categorie }}</label>
+        <select>
+          <option v-for="name in awnser_name">
+            {{ name }}
+          </option>
+        </select>
+      </article>
+      <button>Bereken</button>
+    </section>
+    `
+})
 
 // ------ VUE APP
 

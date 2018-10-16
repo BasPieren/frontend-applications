@@ -7,12 +7,12 @@
 
 html, body {
   height: 100vh;
-  /* overflow: hidden; */
 }
 
 h2{
   margin: 0 0 1em 0;
   font-family: system-ui, sans-serif;
+  text-transform: uppercase;
 }
 
 p{
@@ -22,10 +22,21 @@ p{
 }
 
 button{
-  margin: 1em 0 0 0;
-  padding: 10px 20px;
+  padding: 1em 2em;
   font-family: system-ui, sans-serif;
+  font-size: 0.9em;
+  color: #ffffff;
+  font-weight: 600;
   text-transform: uppercase;
+  background-color: #320b86;
+  border: none;
+  border-radius: 2em;
+  transition: all 0.5s ease;
+}
+
+button:hover{
+  background-color: #673ab7;
+  cursor: pointer;
 }
 
 /* ------------ VUE APP ------------ */
@@ -44,7 +55,7 @@ header{
   background-color: #4D2C91;
 }
 
-nav{
+/* nav{
   display: flex;
   align-items: center;
   top: 0;
@@ -80,13 +91,13 @@ nav > ul > li > a{
 
 nav > ul > li > a:hover{
   color: #FFA726;
-}
+} */
 
 /* ------------ ASIDE ------------ */
 
 aside{
   padding: 2em;
-  height: 100vh;
+  height: auto;
   background-color: #7E57C2;
 }
 
@@ -95,12 +106,11 @@ aside > ul{
 }
 
 aside > ul > li{
-  margin: 0 0 1em 0;
+  margin: 0 0 2em 0;
   font-family: system-ui, sans-serif;
   font-size: 0.9em;
   color: #ffffff;
   font-weight: 400;
-  text-decoration: none;
 }
 
 aside > ul > li:last-child{
@@ -117,7 +127,7 @@ aside > ul > li > a{
 }
 
 aside > ul > li > a:hover{
-  color: #FFA726;
+  margin-left: 0.5em;
 }
 
 /* ------------ MAIN ------------ */
@@ -125,6 +135,26 @@ aside > ul > li > a:hover{
 main{
   padding: 2em;
   float: left;
-  height: 100vh;
+  height: auto;
   background-color: #fafafa;
+}
+
+main > section > article{
+  margin: 0 0 2em 0;
+}
+
+main > section > article:first-child{
+  margin: 2em 0 2em 0;
+}
+
+main > section > article:last-child{
+  margin: 0;
+}
+
+main > section > article > label{
+  display: block;
+  margin: 0 0 0.4em;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
 }
