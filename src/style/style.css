@@ -12,6 +12,7 @@ html, body {
 h2{
   margin: 0 0 1em 0;
   font-family: system-ui, sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -19,24 +20,7 @@ p{
   margin: 1em 0;
   font-family: system-ui, sans-serif;
   font-size: 0.9em;
-}
-
-button{
-  padding: 1em 2em;
-  font-family: system-ui, sans-serif;
-  font-size: 0.9em;
-  color: #ffffff;
-  font-weight: 600;
-  text-transform: uppercase;
-  background-color: #320b86;
-  border: none;
-  border-radius: 2em;
-  transition: all 0.5s ease;
-}
-
-button:hover{
-  background-color: #673ab7;
-  cursor: pointer;
+  font-weight: 100;
 }
 
 /* ------------ VUE APP ------------ */

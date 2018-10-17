@@ -363,20 +363,18 @@ Vue.component('v-aside', {
   },
 
   // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
-
   computed: {
-    categorie_name: function () {
+    categorieName: function () {
       return [...new Set(this.data.map(i => i.Categorie))]
     }
   },
-
   // END USE OF SOURCE
 
   template: `
     <aside>
 
       <ul>
-        <li v-for="categorie in categorie_name">
+        <li v-for="categorie in categorieName">
           <a href="#">{{ categorie }}</a>
         </li>
       </ul>
@@ -402,29 +400,26 @@ Vue.component("v-question", {
   },
 
   // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
-
   computed: {
-    categorie_name: function () {
+    categorieName: function () {
       return [...new Set(this.data.map(i => i.Categorie))]
     },
-    awnser_name: function () {
+    awnserName: function () {
       return [...new Set(this.data.map(i => i.Name))]
-    }
+    },
   },
-
   // END USE OF SOURCE
 
   template: `
     <section>
-      <article v-for="categorie in categorie_name">
+      <article v-for="categorie in categorieName">
         <label>{{ categorie }}</label>
         <select>
-          <option v-for="name in awnser_name">
+          <option v-for="name in awnserName">
             {{ name }}
           </option>
         </select>
       </article>
-      <button>Bereken</button>
     </section>
     `
 })

@@ -22,7 +22,7 @@ This is a list of things in want to do in this project.
 - [ ] Use routing or creating data
 
 ## Description
-This web app can be used to calculate the risk that a child has to be removed from their parental home due to a number of factors.
+This web app can be used to calculate the risk that a child has to be removed from their parental home due to a number of different factors like educational status, social participation by the parents in society and if there are any relations with crime.
 
 ## Installing
 To install this application enter the following into your _terminal_:
@@ -43,7 +43,7 @@ These dependencies are needed to run the web application.
 * [Vue](https://www.npmjs.com/package/vue)
 
 #### devDependencies
-These devdependencies where used during the creation op the web application but are not needed to run it.
+The devdependencies where used during the creation op the web application but are not needed to run it.
 
 * [Prettier](https://www.npmjs.com/package/prettier)
 
