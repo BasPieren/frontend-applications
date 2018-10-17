@@ -82,7 +82,7 @@ nav > ul > li > a:hover{
 aside{
   padding: 2em;
   height: auto;
-  background-color: #7E57C2;
+  background-color: #6D6D6D;
 }
 
 aside > ul{
@@ -95,32 +95,32 @@ aside > ul > li{
   font-size: 0.9em;
   color: #ffffff;
   font-weight: 400;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 aside > ul > li:last-child{
   margin: 0;
 }
 
-aside > ul > li > a{
-  font-family: system-ui, sans-serif;
-  font-size: 1em;
-  color: #ffffff;
-  font-weight: 400;
-  text-decoration: none;
-  transition: all 0.5s ease;
-}
-
-aside > ul > li > a:hover{
+aside > ul > li:hover{
   margin-left: 0.5em;
 }
 
 /* ------------ MAIN ------------ */
 
 main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 2em;
   float: left;
   height: auto;
   background-color: #fafafa;
+}
+
+main > section{
+
 }
 
 main > section > article{
@@ -141,4 +141,16 @@ main > section > article > label{
   font-family: system-ui, sans-serif;
   font-size: 0.9em;
   font-weight: 500;
+}
+
+main > h2, p{
+  grid-column: 1 / 3;
+}
+
+.result_bar{
+  position: absolute;
+  margin: 2em 0 0 0;
+  width: 50px;
+  height: 200px;
+  background-color: #2d2d2d;
 }

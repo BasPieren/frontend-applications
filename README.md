@@ -50,7 +50,9 @@ The devdependencies where used during the creation op the web application but ar
 All of these where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures and labs so thats why I also made use of them.
 
 ## Sources
-This project makes use of the following sources provided by [Titus Wormer](https://github.com/wooorm):
+This project makes use of the following sources:
+
+[Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG)
 
 ## Licence
 
