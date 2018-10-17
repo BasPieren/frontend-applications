@@ -335,7 +335,7 @@ My document looked something like this:
 
 After the setup I started with a quick sketch of how I ruffly wanted the web application to look like.
 
-![Vue.js](images/first_sketch.jpg)
+![Vue.js](images/first_sketch.JPG)
 > First very low-fi sketch
 
 When I got a general idea of how I wanted my web application to look I made a design in Adobe Xd.
@@ -343,16 +343,16 @@ When I got a general idea of how I wanted my web application to look I made a de
 ![Vue.js](images/home.png)
 > Home Page
 
-![Vue.js](images/Start Profiel.png)
+![Vue.js](images/start_profiel.png)
 > Creating a new profile
 
-![Vue.js](images/Start Profiel Einde.png)
+![Vue.js](images/start_profiel_einde.png)
 > A new profile is added to the sidebar
 
-![Vue.js](images/Algemene Informatie Gezin.png)
+![Vue.js](images/algemene_informatie_gezin.png)
 > Selected categorie
 
-![Vue.js](images/Profiel Post.png)
+![Vue.js](images/profiel_post.png)
 > State when you reopen a profile
 
 When the design was done I started with creating the components that I was gonne need for the webb application. I made the following components and initiated a Vue instance on a wrapper div:
