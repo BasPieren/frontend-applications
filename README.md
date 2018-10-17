@@ -11,7 +11,7 @@ This is the repo for my frontend applications project where I made a web applica
 * [Installing](#installing)
 * [Sources](#sources)
 * [Licence](#licence)
-* [Process](##process)
+* [Process](#process)
 
 ## To Do
 This is a list of things in want to do in this project.
@@ -84,7 +84,7 @@ After reading the introduction I followed the [Scrimba](https://scrimba.com/p/pX
 The tutorial showed how to make 6 simple Vue applications.
 
 ### App 1
-This simpele example shows how to link data and the DOM in a reactive way. This means when you edit the data, for example by using `app.message = "Hello World"`, It's get updated accordingly.
+This simpele example shows how to link data and the DOM in a reactive way. This means when you edit the data, for example by using `app.message = "Hello World"`, it's get updated accordingly.
 
 ```
 <div id="app">
