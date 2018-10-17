@@ -52,8 +52,8 @@ All of these where recommended and used as examples by [Titus Wormer](https://gi
 ## Sources
 This project makes use of the following sources:
 
-[Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG)
-[Code provided by Martijn Reeuwijk](https://github.com/MartijnR)
+* [Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG)
+* [Code provided by Martijn Reeuwijk](https://github.com/MartijnR)
 
 ## Licence
 
