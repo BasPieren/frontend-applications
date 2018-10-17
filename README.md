@@ -309,7 +309,100 @@ After the first tutorial I started to watch the second tutorial which went deepe
 ![Vue.js](images/vue_scrimba_02.png)
 > Intro to Vue.js tutorial
 
+After following all the tutorials I started work on the project itself
+sins I got the feeling I had the hang of the basics. I created the `frontend-applications` directory and installed Vue with `node install vue` which installed vue in de `node_modules` directory.
 
+My document looked something like this:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="../../node_modules/vue/dist/vue.js"></script>
+  <title>Fe-applications | Risico indicatie app</title>
+</head>
+<body>
+
+<script src="../script/script.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+```
+
+After the setup I started with a quick sketch of how I ruffly wanted the web application to look like.
+
+![Vue.js](images/first_sketch.jpg)
+> First very low-fi sketch
+
+When I got a general idea of how I wanted my web application to look I made a design in Adobe Xd.
+
+![Vue.js](images/home.png)
+> Home Page
+
+![Vue.js](images/Start Profiel.png)
+> Creating a new profile
+
+![Vue.js](images/Start Profiel Einde.png)
+> A new profile is added to the sidebar
+
+![Vue.js](images/Algemene Informatie Gezin.png)
+> Selected categorie
+
+![Vue.js](images/Profiel Post.png)
+> State when you reopen a profile
+
+When the design was done I started with creating the components that I was gonne need for the webb application. I made the following components and initiated a Vue instance on a wrapper div:
+
+```
+Vue.component('v-header', {
+
+});
+
+Vue.component('v-aside', {
+
+});
+
+Vue.component('v-main', {
+
+});
+
+var vm = new Vue({
+  el: '#v_app'
+});
+```
+
+The HTML looked like this:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="../../node_modules/vue/dist/vue.js"></script>
+  <title>Fe-applications | Risico indicatie app</title>
+</head>
+
+<div id="v_app">
+
+  <v-header></v-header>
+
+  <v-aside></v-aside>
+
+  <v-main></v-main>
+
+</div>
+
+<script src="../script/script.js" type="text/javascript"></script>
+
+</body>
+</html>
+```
 
 ## Licence
 
