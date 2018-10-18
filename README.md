@@ -336,7 +336,7 @@ After I created the first components that I was gonna need I started to fill the
 
 In the aside section I wanted to display all the categories as a means to navigate to the desired category to and fill in the questions that are part of that category.
 
-First I needed the JSON data that was provided by Arjen. I was looking up ways to import the data from the separate JSON file. I found solutions that where using `import vue from './assets/data.json'` but this would not work because I kept getting the same error that `import` was not a valid value.
+First I needed the JSON data that was provided by Arjan. I was looking up ways to import the data from the separate JSON file. I found solutions that where using `import vue from './assets/data.json'` but this would not work because I kept getting the same error that `import` was not a valid value.
 
 After some time of trying I heard other people where having the same issue and the just put the JSON data inside an array. So I did the same and got the following:
 
@@ -583,7 +583,7 @@ Vue.component('v-question', {
         <label>{{ categorie.Categorie }}</label>
         <select>
           <option v-for="antwoorden in mergeData">
-            {{ categorie.Answers }}
+            {{ antwoorden.Answers }}
           </option>
         </select>
       </article>
