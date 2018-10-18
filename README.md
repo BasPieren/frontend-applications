@@ -337,7 +337,7 @@ After the setup I started with a quick sketch of how I ruffly wanted the web app
 When I got a general idea of how I wanted my web application to look I made a design in Adobe Xd.
 
 ### Home Page
-![Vue.js](images/home.png)
+![Vue.js](images/Home.png)
 
 ### Creating profile page
 ![Vue.js](images/start_profiel.png)
