@@ -1,8 +1,8 @@
 # frontend-applications | Risico indicatie App
 
-This is the repo for my frontend applications project where I made a web application using Vue.js. The web application can be used to calculate the risk that a child has to be removed from their parental home
+This is the repo for my frontend applications project where I made a web application using _Vue_. The project was to build a web application that can be used to calculate the risk that a child has to be removed from their parental home.
 
-![Risico Indicatie App Start Screenshot](images/dating_app_start_screenshot.png)
+![Risico Indicatie App Start Screenshot](images/.png)
 > Risico Indicatie App
 
 ## Table of Contents
@@ -45,7 +45,7 @@ This project makes use of the following packages and technologies:
 * [Vue](https://www.npmjs.com/package/vue)
 * [Prettier](https://www.npmjs.com/package/prettier)
 
-I use Vue because it was assingt to me, All of the devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
+I use Vue because it was assigned to me as part of the project, the devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
 
 ## Sources
 This project makes use of the following sources:
@@ -57,11 +57,11 @@ This project makes use of the following sources:
 * [Code provided by Martijn Reeuwijk](https://github.com/MartijnReeuwijk)
 
 ## Process
-Add the start of this project I got assigned  [Vue](https://www.npmjs.com/package/vue) as the framework to use for the frontend applications project.
+Add the start of this project I got assigned [Vue](https://www.npmjs.com/package/vue) as the framework to use for the frontend applications project.
 
 ![Vue.js](images/vue_js_home.png)
 
-First I wanted to familiarize myself with the framework itself before I would start on the project. I began with following the [installation](https://vuejs.org/v2/guide/installation.html) guide on the Vue website and followed that with the short introduction about the following points:
+First I wanted to familiarize myself with the framework itself before I would start on the project. I began with following the [installation](https://vuejs.org/v2/guide/installation.html) guide on the Vue website and followed that with the short introduction about the following basic Vue concepts:
 
 * What is Vue.js?
 * Getting Started
