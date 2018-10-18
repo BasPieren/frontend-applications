@@ -1,6 +1,6 @@
 # frontend-applications | Risico indicatie App
 
-This is the repositorie for my frontend applications project where I made a web application using Vue. The project was to build a web application that can be used to calculate the risk that a child has to be removed from their parental home.
+This is the repositorie for my frontend applications project where I made a web application using Vue. The project was to build a web application that can be used to calculate the risk if a child has to be removed from their parental home.
 
 ![Risico Indicatie App Start Screenshot](images/.png)
 > Risico Indicatie App
@@ -45,7 +45,7 @@ This project makes use of the following packages and technologies:
 * [Vue](https://www.npmjs.com/package/vue)
 * [Prettier](https://www.npmjs.com/package/prettier)
 
-I use Vue because it was assigned to me as part of the project. The devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
+I used Vue because it was assigned to me as part of the project. The devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
 
 ## Sources
 This project makes use of the following sources:
@@ -334,11 +334,11 @@ The HTML looked like this:
 
 After I created the first components that I was gonna need I started to fill them with the content that I wanted to display per components. The most important components where the aside and the main.
 
-In the aside section I wanted to display all the categories as a means to navigate to the desired category to and fill in the questions that are part of that category.
+In the aside section I wanted to display all the categories as a means to navigate to the desired category and fill in the questions that are part of that category.
 
 First I needed the JSON data that was provided by Arjan. I was looking up ways to import the data from the separate JSON file. I found solutions that where using `import vue from './assets/data.json'` but this would not work because I kept getting the same error that `import` was not a valid value.
 
-After some time of trying I heard other people where having the same issue and the just put the JSON data inside an array. So I did the same and got the following:
+After some time of trying I heard other people where having the same issue and they just put the JSON data inside an array. So I did the same and got the following:
 
 ```js
 var data = [
@@ -367,7 +367,7 @@ var data = [
 ];
 ```
 
-After that I added the data property to the component to import the that through a function and return the data array. I also added a `v-for` to the `<li>` tag to be able to loop through the entire array and put out all the categories into the list.
+After that I added the data property to the component to import the data through a function and return the data array. I also added a `v-for` to the `<li>` tag to be able to loop through the entire array and put out all the categories into the list.
 
 ```js
 Vue.component('v-aside', {
@@ -386,7 +386,7 @@ Vue.component('v-aside', {
     </aside>`
 });
 ```
-This gave the desired affect except for one thing: it printed all the categories multiple times because of the way the data was set up. So I needed to find a fix for this.
+This gave the desired affect except for one thing: it printed all the categories multiple times because of the way the data is set up. So I needed to find a fix for this.
 
 After some time I found the following source: [Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG). This code provided me with the solution:
 
@@ -530,8 +530,7 @@ I will explain what the code does. First we create the `mergeData: function () {
 
 After that we create the newCategory var with the boolean true. Then we create an other loop that checks if the dataPrepped array holds a category that is the same as a category inside the data array. If this is true we wont add a the category and set newCategory to false. Than we have a if statement that pushes the category into the dataPrepped array as a new object with category and answers as values. The answers value is also an array that we will fill with the correct answers.
 
-To do this we create a new for loop that goes over the dataPrepped array again and checks if it has the same category as the data array.
-We then push Coefficients, Name and Gewicht in to the Answers array. Finally we return the dataPrepped array.
+To do this we create a new for loop that goes over the dataPrepped array again and checks if it has the same category as the data array. We then push Coefficients, Name and Gewicht in to the Answers array. Finally we return the dataPrepped array.
 
 Combined with the rest of the component it looks like this:
 
