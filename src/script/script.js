@@ -346,11 +346,16 @@ var data = [
 // ------ COMPONENTS
 
 Vue.component('v-header', {
+  // With Vue.component you can create a new component.
   template: `
     <header>
       <nav>
         <ul>
-          <li></li>
+          <li><a href="index.html">Introductie</a></li>
+          <li><a href="#">Risico Indicatie</a></li>
+          <li><a href="#">Traject Keuze</a></li>
+          <li><a href="#">Over</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>`
@@ -362,15 +367,13 @@ Vue.component('v-aside', {
       data
     };
   },
-
   computed: {
     // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
     categorieName: function() {
       return [...new Set(this.data.map(i => i.Categorie))];
-    }
+    },
     // END USE OF SOURCE
   },
-
   template: `
     <aside>
       <ul>
@@ -388,68 +391,60 @@ Vue.component('v-main', {
       <p>Deze beslissingondersteuningstool kan gebruikt worden door hulpverleners om een objectieve risico-indicatie te krijgen op een zwaardere maatregel op basis van kenmerken van het kind, de ouders en het huishouden.</p>
       <p>Onder zwaardere maatregelen vallen in dit geval jeugdhulp met verblijf, jeugdbeschermingsmaatregelen en jeugdreclasseringsmaatregelen.</p>
       <v-question></v-question>
-      <v-result></v-result>
     </main>`
 });
 
 Vue.component('v-question', {
   data: function() {
     return {
-      data,
+      data
     };
   },
   computed: {
     mergeData: function() {
-
-    // START USE OF SOURCE: Martijn Reeuwijk
-    var dataPrepped = [];
-    for (var i = 0; i < data.length; i++) {
-
-      var newCategory = true;
-      for (var j = 0; j < dataPrepped.length; j++) {
-        if (dataPrepped[j].Categorie === data[i].Categorie) {
-          newCategory = false;
+      // START USE OF SOURCE: Martijn Reeuwijk
+      var dataPrepped = [];
+      for (var i = 0; i < data.length; i++) {
+        var newCategory = true;
+        for (var j = 0; j < dataPrepped.length; j++) {
+          if (dataPrepped[j].Categorie === data[i].Categorie) {
+            newCategory = false;
+          }
         }
-      }
 
-      if (newCategory) {
-        dataPrepped.push({
-          'Categorie': data[i].Categorie,
-          'Answers': []
-        });
-      }
-
-      for (var j = 0; j < dataPrepped.length; j++) {
-        if (dataPrepped[j].Categorie === data[i].Categorie) {
-          dataPrepped[j].Answers.push({
-            'Coefficients': data[i].Coefficients,
-            'Name': data[i].Name,
-            'Gewicht': data[i].Gewicht,
+        if (newCategory) {
+          dataPrepped.push({
+            Categorie: data[i].Categorie,
+            Answers: []
           });
         }
-      }
+
+        for (var j = 0; j < dataPrepped.length; j++) {
+          if (dataPrepped[j].Categorie === data[i].Categorie) {
+            dataPrepped[j].Answers.push({
+              Coefficients: data[i].Coefficients,
+              Name: data[i].Name,
+              Gewicht: data[i].Gewicht
+            });
+          }
+        }
         // END USE OF SOURCE
       }
       return dataPrepped;
-      }
+    }
   },
   template: `
-    <section>
-      <article v-for="categorie in mergeData">
-        <label>{{ categorie.Categorie }}</label>
+    <section class="questions">
+      <article v-for="data in mergeData">
+        <label>{{ data.Categorie }}</label>
         <select>
-          <option v-for="antwoorden in mergeData">
-            {{ categorie.Answers }}
+          <option>
+              {{ data.Answers }}
           </option>
         </select>
       </article>
     </section>
     `
-});
-
-Vue.component('v-result', {
-  template: `
-  `
 });
 
 // ------ VUE APP
