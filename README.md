@@ -23,10 +23,10 @@ This is a list of things in want to do in this project.
 - [ ] Use routing or creating data
 
 ## Description
-This web app can be used to calculate the risk that a child has to be removed from their parental home due to a number of different factors like educational status, social participation by the parents in society and if there are any relations with crime.
+This web app can be used to calculate the risk that a child has to be removed from their parental home due to a number of different factors like educational status, social participation by the parents in society and if they ever came in contact with crime.
 
 ## Installing
-To install this application enter the following into your _terminal_:
+To install this application enter the following into your terminal:
 ```
 git clone https://github.com/BasPieren/frontend-applications.git
 
@@ -42,21 +42,17 @@ npm install --dev
 ### Packages and technologies
 This project makes use of the following packages and technologies:
 
-#### Dependencies
-These dependencies are needed to run the web application.
-
 * [Vue](https://www.npmjs.com/package/vue)
-
-#### devDependencies
-The devdependencies where used during the creation op the web application but are not needed to run it.
-
 * [Prettier](https://www.npmjs.com/package/prettier)
 
-All of these where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures and labs so thats why I also made use of them.
+I use Vue because it was assingt to me, All of the devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
 
 ## Sources
 This project makes use of the following sources:
 
+* [Vue introduction](https://vuejs.org/v2/guide/)
+* [Vue Scrimba introduction](https://scrimba.com/p/pXKqta/cQ3QVcr)
+* [Learn Vue.js for free](https://scrimba.com/g/glearnvue)
 * [Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG)
 * [Code provided by Martijn Reeuwijk](https://github.com/MartijnReeuwijk)
 
