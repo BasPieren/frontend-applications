@@ -1,6 +1,6 @@
 # frontend-applications | Risico indicatie App
 
-This is the repositorie for my frontend applications project where I made a web application using _Vue_. The project was to build a web application that can be used to calculate the risk that a child has to be removed from their parental home.
+This is the repositorie for my frontend applications project where I made a web application using Vue. The project was to build a web application that can be used to calculate the risk that a child has to be removed from their parental home.
 
 ![Risico Indicatie App Start Screenshot](images/.png)
 > Risico Indicatie App
@@ -45,7 +45,7 @@ This project makes use of the following packages and technologies:
 * [Vue](https://www.npmjs.com/package/vue)
 * [Prettier](https://www.npmjs.com/package/prettier)
 
-I use Vue because it was assigned to me as part of the project, the devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
+I use Vue because it was assigned to me as part of the project. The devDependencies where recommended and used as examples by [Titus Wormer](https://github.com/wooorm) during the lectures so thats why I also made use of them.
 
 ## Sources
 This project makes use of the following sources:
@@ -59,7 +59,7 @@ This project makes use of the following sources:
 ## Process
 Add the start of this project I got assigned [Vue](https://www.npmjs.com/package/vue) as the framework to use for the frontend applications project.
 
-![Vue.js](images/vue_js_home.png)
+![Vue Home Page](images/vue_js_home.png)
 
 First I wanted to familiarize myself with the framework itself before I would start on the project. I began with following the [installation](https://vuejs.org/v2/guide/installation.html) guide on the Vue website and followed that with the short introduction about the following basic Vue concepts:
 
@@ -74,10 +74,10 @@ In short Vue is described as a **progressive framework** for building user inter
 
 After reading the introduction I followed the [Scrimba](https://scrimba.com/p/pXKqta/cQ3QVcr) tutorial which explains the same basic concepts but using a video and voiceover which made it easier to follow.
 
-![Vue.js](images/vue_scrimba_01.png)
+![Vue Scrimba Introduction](images/vue_scrimba_01.png)
 > Vue introduction tutorial
 
-The tutorial showed how to make 6 simple Vue applications.
+The tutorial showed how to make six simple Vue applications.
 
 ### App 1
 This simpele example shows how to link data and the DOM in a reactive way. This means when you edit the data, for example by using `app.message = "Hello World"`, it's get updated accordingly.
@@ -99,7 +99,7 @@ var app = new Vue({
 </script>
 ```
 
-This was all the code after I was done with the tutorial:
+This was all the code after I was done with the tutorial, it showed how to use things like `v-bind`, `v-if`, `v-for`, `v-on:click` and `v-model`:
 
 ```
 <!DOCTYPE html>
@@ -157,32 +157,6 @@ This was all the code after I was done with the tutorial:
   <div id="app-6">
     <p>{{ message }}</p>
     <input v-model="message">
-  </div>
-
-  <!-- APP 7 -->
-
-  <div id="app-7">
-    <ol>
-      <todo-item
-        v-for="item in groceryList"
-        v-bind:todo="item"
-        v-bind:key="item.id">
-      </todo-item>
-    </ol>
-  </div>
-
-  <div id="todolist">
-    <h1>TODO:</h1>
-
-    <ul>
-      <li v-for="todo in todos">
-        <button v-on:click="remove(todo)">X</button>{{todo}}
-      </li>
-    </ul>
-
-    <input v-model="newtodo">
-    <button v-on:click="add">Voeg {{newtodo}} toe</button>
-
   </div>
 
   <script type="text/javascript">
@@ -250,50 +224,10 @@ This was all the code after I was done with the tutorial:
       }
     })
 
-    // APP 7
-
-    Vue.component("todo-item", {
-      props: ["todo"],
-      template: "<li>{{ todo.text }}</li>"
-    })
-
-    var app7 = new Vue({
-      el: "#app-7",
-      data: {
-        groceryList: [
-          {id: 0, text:'Vegetables'},
-          {id: 1, text:'Cheese'},
-          {id: 2, text:'Whatever else humans are supposed to eat'},
-        ]
-      }
-
-    })
-
-    new Vue({
-        el : "#todolist",
-        data : {
-            newtodo : null,
-            todos : ['Boter', 'Kaas', 'Eieren', 'Whisky']
-        },
-        methods : {
-            add : function() {
-                this.todos.push(this.newtodo);
-                this.newtodo = null;
-            },
-
-            remove : function(todo) {
-                this.todos = this.todos.filter(function(t) {
-                    return t !== todo;
-                });
-            }
-        }
-    })
-
   </script>
 
 </body>
 </html>
-
 ```
 
 After the first tutorial I started to watch the second tutorial which went deeper into stuff like:
@@ -302,13 +236,12 @@ After the first tutorial I started to watch the second tutorial which went deepe
 * Control-Flow
 * Components
 
-![Vue.js](images/vue_scrimba_02.png)
+![Intro To Vue.js Tutorial](images/vue_scrimba_02.png)
 > Intro to Vue.js tutorial
 
-After following all the tutorials I started work on the project itself
-sinds I got the feeling I had the hang of the basics. I created the `frontend-applications` directory and installed Vue with `node install vue` which installed vue in de `node_modules` directory.
+After following all the tutorials I started work on the project itself sinds I got the feeling I had the hang of the basics. I created the `frontend-applications` directory and installed Vue with `node install vue` which installed Vue in de `node_modules` directory.
 
-My document looked something like this:
+My HTML looked like this:
 
 ```
 <!DOCTYPE html>
@@ -326,32 +259,31 @@ My document looked something like this:
 
 </body>
 </html>
-
 ```
 
-After the setup I started with a quick sketch of how I ruffly wanted the web application to look like.
+After the setup I started with a quick sketch of ruffly how I wanted the web application to look.
 
-![Vue.js](images/first_sketch.JPG)
+![First UI Sketch](images/first_sketch.JPG)
 > First very low-fi sketch
 
-When I got a general idea of how I wanted my web application to look I made a design in Adobe Xd.
+When I got a general idea of how I wanted my web application to look I made a design in Adobe XD.
 
 ### Home Page
-![Vue.js](images/Home.png)
+![Home Page](images/Home.png)
 
 ### Creating profile page
-![Vue.js](images/start_profiel.png)
+![Creating Profile Page](images/start_profiel.png)
 
 ### Save after creating profile
-![Vue.js](images/start_profiel_einde.png)
+![Save After Creating Profile](images/start_profiel_einde.png)
 
 ### Selected profile categorie
-![Vue.js](images/algemene_informatie_gezin.png)
+![Selected Profile Categorie](images/algemene_informatie_gezin.png)
 
 ### Reopen profile after save
-![Vue.js](images/profiel_post.png)
+![Reopen Profile After Save](images/profiel_post.png)
 
-When the design was done I started with creating the components that I was gonne need for the webb application. I made the following components and initiated a Vue instance on a wrapper div:
+When the design was done I started with creating the components that I was gonna need for the web application. I made the following components and initiated a Vue instance on a wrapper div:
 
 ```
 Vue.component('v-header', {
@@ -402,9 +334,9 @@ The HTML looked like this:
 
 After I created the first components that I was gonna need I started to fill them with the content that I wanted to display per components. The most important components where the aside and the main.
 
-In the aside section I wanted to display all the categories as a means to navigate to the desired categorie to and fill in the questions that are part of that categorie.
+In the aside section I wanted to display all the categories as a means to navigate to the desired category to and fill in the questions that are part of that category.
 
-First I needed the JSON data that was provided by Arjen. I was looking up ways to import the data from the separate JSON file. I found solutions that where using `import vue from './assets/data.json'` but this would not work becaus I kept getting the same error that `import` was not a valid value.
+First I needed the JSON data that was provided by Arjen. I was looking up ways to import the data from the separate JSON file. I found solutions that where using `import vue from './assets/data.json'` but this would not work because I kept getting the same error that `import` was not a valid value.
 
 After some time of trying I heard other people where having the same issue and the just put the JSON data inside an array. So I did the same and got the following:
 
@@ -471,9 +403,9 @@ I will go through how this code works. First I added the `computed` property to 
 
 > Computed properties are cached, and only re-computed on reactive dependency changes. Note that if a certain dependency is out of the instance’s scope (i.e. not reactive), the computed property will not be updated (Vue, 2018).
 
-Inside the computed property I created a new function named `categorieName: function () {}` and inside the function we return a new array that checks if a categorie is duplicated and only gives back one per categorie.
+Inside the computed property I created a new function named `categorieName: function () {}` and inside the function we return a new array that checks if a category is duplicated and only gives back one per category.
 
-All of this thougher look like the following:
+All of this together looked like this:
 
 ```
 Vue.component('v-aside', {
@@ -504,9 +436,9 @@ Vue.component('v-aside', {
 
 This gave the following outcome:
 
-![Vue.js](images/aside_categories.png)
+![Sidebar](images/aside_categories.png)
 
-After the aside component was finished I started to work on the main component. The main component was pretty straight forward and only requird a template property.
+After the aside component was finished I started to work on the main component. The main component was pretty straight forward and only required the template property.
 
 ```
 Vue.component('v-main', {
@@ -522,7 +454,7 @@ Vue.component('v-main', {
 
 Inside the template I also declared the `<v-question>` tag which would be the component to hold the questions that the user would have to fill out.
 
-So after the main I started work on the question component. The first setup looked something like this:
+So after the main I started work on the question component. The first setup looked like this:
 
 ```
 Vue.component('v-question', {
@@ -546,8 +478,8 @@ Vue.component('v-question', {
       <article v-for="categorie in categorieName">
         <label>{{ categorie }}</label>
         <select>
-          <option v-for="antwoorden in awnserName">
-            {{ antwoorden }}
+          <option v-for="name in awnserName">
+            {{ name }}
           </option>
         </select>
       </article>
@@ -594,12 +526,12 @@ for (var i = 0; i < data.length; i++) {
   }
 ```
 
-I will explain what the code does. First we create the `mergeData: function () {}`. Inside the function we create the dataPrepped array which we will fill with all the categories grouped as objects with there respective answers. After that we create a for loop that will loop through the length of the data array.
+I will explain what the code does. First we create the `mergeData: function () {}`. Inside the function we create `var dataPrepped = [];` which we will fill with all the categories grouped as objects with there respective answers. After that we create a for loop that will loop through the length of the data array.
 
-After that we create the newCategory var with the boolean true. Then we create an other loop that checks if the dataPrepped array holds a category that is the same as a category inside the data array. If this is true we wont add a the category and set newCategory to false. Than we have a if statement that pushes the catagory into the dataPrepped array as a new object with categorie and answers as values. The answers value is also an array that we will fill with the correct answers.
+After that we create the newCategory var with the boolean true. Then we create an other loop that checks if the dataPrepped array holds a category that is the same as a category inside the data array. If this is true we wont add a the category and set newCategory to false. Than we have a if statement that pushes the category into the dataPrepped array as a new object with category and answers as values. The answers value is also an array that we will fill with the correct answers.
 
-To do this we create a new for loop that goes over the dataPrepped array again and checks if it has the same categorie as the data array.
-We then push Coefficients, Name and Gewicht in to the Answers array. Finaly we return the dataPrepped array.
+To do this we create a new for loop that goes over the dataPrepped array again and checks if it has the same category as the data array.
+We then push Coefficients, Name and Gewicht in to the Answers array. Finally we return the dataPrepped array.
 
 Combined with the rest of the component it looks like this:
 
