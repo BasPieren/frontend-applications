@@ -82,7 +82,7 @@ The tutorial showed how to make six simple Vue applications.
 ### App 1
 This simpele example shows how to link data and the DOM in a reactive way. This means when you edit the data, for example by using `app.message = "Hello World"`, it's get updated accordingly.
 
-```
+```html
 <div id="app">
   {{ message }}
 </div>
@@ -101,7 +101,7 @@ var app = new Vue({
 
 This was all the code after I was done with the tutorial, it showed how to use things like `v-bind`, `v-if`, `v-for`, `v-on:click` and `v-model`:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -243,7 +243,7 @@ After following all the tutorials I started work on the project itself sinds I g
 
 My HTML looked like this:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -285,7 +285,7 @@ When I got a general idea of how I wanted my web application to look I made a de
 
 When the design was done I started with creating the components that I was gonna need for the web application. I made the following components and initiated a Vue instance on a wrapper div:
 
-```
+```js
 Vue.component('v-header', {
 
 });
@@ -305,7 +305,7 @@ var vm = new Vue({
 
 The HTML looked like this:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -369,7 +369,7 @@ var data = [
 
 After that I added the data property to the component to import the that through a function and return the data array. I also added a `v-for` to the `<li>` tag to be able to loop through the entire array and put out all the categories into the list.
 
-```
+```js
 Vue.component('v-aside', {
   data: function() {
     return {
@@ -390,7 +390,7 @@ This gave the desired affect except for one thing: it printed all the categories
 
 After some time I found the following source: [Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG). This code provided me with the solution:
 
-```
+```js
 computed: {
   // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
   categorieName: function() {
@@ -407,7 +407,7 @@ Inside the computed property I created a new function named `categorieName: func
 
 All of this together looked like this:
 
-```
+```js
 Vue.component('v-aside', {
   data: function() {
     return {
@@ -440,7 +440,7 @@ This gave the following outcome:
 
 After the aside component was finished I started to work on the main component. The main component was pretty straight forward and only required the template property.
 
-```
+```js
 Vue.component('v-main', {
   template: `
     <main>
@@ -456,7 +456,7 @@ Inside the template I also declared the `<v-question>` tag which would be the co
 
 So after the main I started work on the question component. The first setup looked like this:
 
-```
+```js
 Vue.component('v-question', {
   data: function() {
     return {
@@ -490,7 +490,7 @@ Vue.component('v-question', {
 
 I used the same code that I used for the aside component but the problem here was that each category would have all the answers of all the questions inside the same dropdown selection. After not being able to find a solution online I added a some code that was written by [Martijn Reeuwijk](https://github.com/MartijnReeuwijk):
 
-```
+```js
 mergeData: function() {
 
 // START USE OF SOURCE: Martijn Reeuwijk
@@ -535,7 +535,7 @@ We then push Coefficients, Name and Gewicht in to the Answers array. Finally we 
 
 Combined with the rest of the component it looks like this:
 
-```
+```js
 Vue.component('v-question', {
   data: function() {
     return {
