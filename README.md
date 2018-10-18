@@ -1,6 +1,6 @@
 # frontend-applications | Risico indicatie App
 
-This is the repositorie for my frontend applications project where I made a web application using *_Vue_*. The project was to build a web application that can be used to calculate the risk that a child has to be removed from their parental home.
+This is the repositorie for my frontend applications project where I made a web application using _Vue_. The project was to build a web application that can be used to calculate the risk that a child has to be removed from their parental home.
 
 ![Risico Indicatie App Start Screenshot](images/.png)
 > Risico Indicatie App
