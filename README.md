@@ -340,7 +340,7 @@ First I needed the JSON data that was provided by Arjen. I was looking up ways t
 
 After some time of trying I heard other people where having the same issue and the just put the JSON data inside an array. So I did the same and got the following:
 
-```
+```js
 var data = [
   {
     Coefficients: 'GESLACHT Mannen',
