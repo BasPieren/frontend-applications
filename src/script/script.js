@@ -439,7 +439,7 @@ Vue.component('v-question', {
         <label>{{ data.Categorie }}</label>
         <select>
           <option>
-              {{ data.Answers }}
+              {{ data.Answers.Name }}
           </option>
         </select>
       </article>
