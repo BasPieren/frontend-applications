@@ -310,7 +310,7 @@ After the first tutorial I started to watch the second tutorial which went deepe
 > Intro to Vue.js tutorial
 
 After following all the tutorials I started work on the project itself
-sins I got the feeling I had the hang of the basics. I created the `frontend-applications` directory and installed Vue with `node install vue` which installed vue in de `node_modules` directory.
+sinds I got the feeling I had the hang of the basics. I created the `frontend-applications` directory and installed Vue with `node install vue` which installed vue in de `node_modules` directory.
 
 My document looked something like this:
 
@@ -340,20 +340,20 @@ After the setup I started with a quick sketch of how I ruffly wanted the web app
 
 When I got a general idea of how I wanted my web application to look I made a design in Adobe Xd.
 
+### Home Page
 ![Vue.js](images/home.png)
-> Home Page
 
+### Creating profile page
 ![Vue.js](images/start_profiel.png)
-> Creating a new profile
 
+### Save after creating profile
 ![Vue.js](images/start_profiel_einde.png)
-> A new profile is added to the sidebar
 
+### Selected profile categorie
 ![Vue.js](images/algemene_informatie_gezin.png)
-> Selected categorie
 
+### Reopen profile after save
 ![Vue.js](images/profiel_post.png)
-> State when you reopen a profile
 
 When the design was done I started with creating the components that I was gonne need for the webb application. I made the following components and initiated a Vue instance on a wrapper div:
 
@@ -526,6 +526,145 @@ Vue.component('v-main', {
 
 Inside the template I also declared the `<v-question>` tag which would be the component to hold the questions that the user would have to fill out.
 
+So after the main I started work on the question component. The first setup looked something like this:
+
+```
+Vue.component('v-question', {
+  data: function() {
+    return {
+      data,
+    };
+  },
+  computed: {
+    // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
+    categorieName: function() {
+      return [...new Set(this.data.map(i => i.Categorie))];
+    },
+    awnserName: function() {
+      return [...new Set(this.data.map(i => i.Name))];
+    },
+    // END USE OF SOURCE
+  },
+  template: `
+    <section>
+      <article v-for="categorie in categorieName">
+        <label>{{ categorie }}</label>
+        <select>
+          <option v-for="antwoorden in awnserName">
+            {{ antwoorden }}
+          </option>
+        </select>
+      </article>
+    </section>
+    `
+});
+```
+
+I used the same code that I used for the aside component but the problem here was that each category would have all the answers of all the questions inside the same dropdown selection. After not being able to find a solution online I added a some code that was written by [Martijn Reeuwijk](https://github.com/MartijnReeuwijk):
+
+```
+mergeData: function() {
+
+// START USE OF SOURCE: Martijn Reeuwijk
+var dataPrepped = [];
+for (var i = 0; i < data.length; i++) {
+
+  var newCategory = true;
+  for (var j = 0; j < dataPrepped.length; j++) {
+    if (dataPrepped[j].Categorie === data[i].Categorie) {
+      newCategory = false;
+    }
+  }
+
+  if (newCategory) {
+    dataPrepped.push({
+      'Categorie': data[i].Categorie,
+      'Answers': []
+    });
+  }
+
+  for (var j = 0; j < dataPrepped.length; j++) {
+    if (dataPrepped[j].Categorie === data[i].Categorie) {
+      dataPrepped[j].Answers.push({
+        'Coefficients': data[i].Coefficients,
+        'Name': data[i].Name,
+        'Gewicht': data[i].Gewicht,
+      });
+    }
+  }
+    // END USE OF SOURCE
+  }
+  return dataPrepped;
+  }
+```
+
+I will explain what the code does. First we create the `mergeData: function () {}`. Inside the function we create the dataPrepped array which we will fill with all the categories grouped as objects with there respective answers. After that we create a for loop that will loop through the length of the data array.
+
+After that we create the newCategory var with the boolean true. Then we create an other loop that checks if the dataPrepped array holds a category that is the same as a category inside the data array. If this is true we wont add a the category and set newCategory to false. Than we have a if statement that pushes the catagory into the dataPrepped array as a new object with categorie and answers as values. The answers value is also an array that we will fill with the correct answers.
+
+To do this we create a new for loop that goes over the dataPrepped array again and checks if it has the same categorie as the data array.
+We then push Coefficients, Name and Gewicht in to the Answers array. Finaly we return the dataPrepped array.
+
+Combined with the rest of the component it looks like this:
+
+```
+Vue.component('v-question', {
+  data: function() {
+    return {
+      data,
+    };
+  },
+  computed: {
+    mergeData: function() {
+
+    // START USE OF SOURCE: Martijn Reeuwijk
+    var dataPrepped = [];
+    for (var i = 0; i < data.length; i++) {
+
+      var newCategory = true;
+      for (var j = 0; j < dataPrepped.length; j++) {
+        if (dataPrepped[j].Categorie === data[i].Categorie) {
+          newCategory = false;
+        }
+      }
+
+      if (newCategory) {
+        dataPrepped.push({
+          'Categorie': data[i].Categorie,
+          'Answers': []
+        });
+      }
+
+      for (var j = 0; j < dataPrepped.length; j++) {
+        if (dataPrepped[j].Categorie === data[i].Categorie) {
+          dataPrepped[j].Answers.push({
+            'Coefficients': data[i].Coefficients,
+            'Name': data[i].Name,
+            'Gewicht': data[i].Gewicht,
+          });
+        }
+      }
+        // END USE OF SOURCE
+      }
+      return dataPrepped;
+      }
+  },
+  template: `
+    <section>
+      <article v-for="categorie in mergeData">
+        <label>{{ categorie.Categorie }}</label>
+        <select>
+          <option v-for="antwoorden in mergeData">
+            {{ categorie.Answers }}
+          </option>
+        </select>
+      </article>
+    </section>
+    `
+});
+```
+
+Inside the template we put a v-for on the article tag and create a new article for each category. We also put a v-for on the option tag to load all the answers that are part of the category into the select field.
 
 ## Licence
 
