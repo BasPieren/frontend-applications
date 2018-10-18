@@ -399,39 +399,29 @@ Vue.component('v-question', {
     };
   },
   computed: {
-
-    // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
-    categorieName: function() {
-      return [...new Set(this.data.map(i => i.Categorie))];
-    },
-    awnserName: function() {
-      return [...new Set(this.data.map(i => i.Name))];
-    },
-    // END USE OF SOURCE
-
     mergeData: function() {
 
     // START USE OF SOURCE: Martijn Reeuwijk
     var dataPrepped = [];
     for (var i = 0; i < data.length; i++) {
 
-      var new_cat = true;
+      var newCategory = true;
       for (var j = 0; j < dataPrepped.length; j++) {
         if (dataPrepped[j].Categorie === data[i].Categorie) {
-          new_cat = false;
+          newCategory = false;
         }
       }
 
-      if (new_cat) {
+      if (newCategory) {
         dataPrepped.push({
           'Categorie': data[i].Categorie,
-          'Antwoorden': []
+          'Answers': []
         });
       }
 
       for (var j = 0; j < dataPrepped.length; j++) {
         if (dataPrepped[j].Categorie === data[i].Categorie) {
-          dataPrepped[j].Antwoorden.push({
+          dataPrepped[j].Answers.push({
             'Coefficients': data[i].Coefficients,
             'Name': data[i].Name,
             'Gewicht': data[i].Gewicht,
@@ -449,7 +439,7 @@ Vue.component('v-question', {
         <label>{{ categorie.Categorie }}</label>
         <select>
           <option v-for="antwoorden in mergeData">
-            {{ categorie.Antwoorden }}
+            {{ categorie.Answers }}
           </option>
         </select>
       </article>
