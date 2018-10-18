@@ -2,7 +2,7 @@
 
 This is the repositorie for my frontend applications project where I made a web application using Vue. The project was to build a web application that can be used to calculate the risk if a child has to be removed from their parental home.
 
-![Risico Indicatie App Start Screenshot](images/.png)
+![Risico Indicatie App Start Screenshot](images/prototype.png)
 > Risico Indicatie App
 
 ## Table of Contents
