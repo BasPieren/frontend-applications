@@ -594,7 +594,7 @@ Vue.component('v-question', {
 
 Inside the template we put a v-for on the article tag and create a new article for each category. We also put a v-for on the option tag to load all the answers that are part of the category into the select field.
 
-##Conclusion
+## Conclusion
 In the last two weeks I think I have gotten a basic understanding of how Vue works but not more than that. What I found difficult was to figure out where to use what property or attribute like computed, method and v-... and what code to put where to get the desired effect. The documentation from Vue helped in the beginning together with the Scrimba tutorials but only really went into the basics.
 
 Overall I'm kinda happy with the end result. I think I got a good concept but could have gotten more out of the prototype
