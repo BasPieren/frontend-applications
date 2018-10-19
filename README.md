@@ -403,7 +403,7 @@ I will go through how this code works. First I added the `computed` property to 
 
 > Computed properties are cached, and only re-computed on reactive dependency changes. Note that if a certain dependency is out of the instance’s scope (i.e. not reactive), the computed property will not be updated (Vue, 2018).
 
-Inside the computed property I created a new function named `categorieName: function () {}` and inside the function we return a new array that checks if a category is duplicated and only gives back one per category.
+Inside the computed property I created a new function named `categorieName: function () {}` and inside the function we return a new array use the spread syntax to create a new array using a existing array that checks if a category is duplicated and only gives back one per category.
 
 All of this together looked like this:
 
