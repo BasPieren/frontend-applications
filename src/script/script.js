@@ -372,9 +372,11 @@ Vue.component('v-aside', {
   },
   // Computed allows you to decalre property that are stored in the cache.
   computed: {
-    // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
-    categorieName: function() {
-      return [...new Set(this.data.map(i => i.Categorie))];
+    // START USE OF SOURCE: https://stackoverflow.com/questions/52330766/vuejs-v-for-remove-duplicates/52331001
+    // This code makes sure that it only returns one category when there are duplicates
+
+    categorieName: function() { // Here we declare the categorieName function.
+      return [...new Set(this.data.map(i => i.Categorie))]; // Here we use the spread syntax to create a new array using a existing array.
     },
     // END USE OF SOURCE
   },
