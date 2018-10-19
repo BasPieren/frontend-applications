@@ -53,7 +53,7 @@ This project makes use of the following sources:
 * [Vue introduction](https://vuejs.org/v2/guide/)
 * [Vue Scrimba introduction](https://scrimba.com/p/pXKqta/cQ3QVcr)
 * [Learn Vue.js for free](https://scrimba.com/g/glearnvue)
-* [Simple list filter with Vue.js](https://codepen.io/anon/pen/bxjpKG)
+* [Simple list filter with Vue.js](https://stackoverflow.com/questions/52330766/vuejs-v-for-remove-duplicates/52331001)
 * [Code provided by Martijn Reeuwijk](https://github.com/MartijnReeuwijk)
 
 ## Process
