@@ -6,6 +6,7 @@ Martijn Reeuwijk
 */
 
 // ------ IMPORT
+// A variable that holds all the data in a array.
 
 var data = [
   {
@@ -344,9 +345,10 @@ var data = [
 ];
 
 // ------ COMPONENTS
+// Here we decalre all the components that are used in the application.
 
-Vue.component('v-header', {
-  // With Vue.component you can create a new component.
+Vue.component('v-header', { // With Vue.component you can create a new component.
+  // Template allows you to render something to the DOM.
   template: `
     <header>
       <nav>
@@ -362,11 +364,13 @@ Vue.component('v-header', {
 });
 
 Vue.component('v-aside', {
+  // Data declares what data you want to use inside your component.
   data: function() {
     return {
-      data
+      data // This function returns the data variable.
     };
   },
+  // Computed allows you to decalre property that are stored in the cache.
   computed: {
     // START USE OF SOURCE: https://codepen.io/anon/pen/bxjpKG
     categorieName: function() {
@@ -403,25 +407,27 @@ Vue.component('v-question', {
   computed: {
     mergeData: function() {
       // START USE OF SOURCE: Martijn Reeuwijk
-      var dataPrepped = [];
-      for (var i = 0; i < data.length; i++) {
-        var newCategory = true;
-        for (var j = 0; j < dataPrepped.length; j++) {
-          if (dataPrepped[j].Categorie === data[i].Categorie) {
+      // This code was wrtitten by Martijn Reeuwijk and groups the categories together with the answers.
+
+      var dataPrepped = []; // Decalre a new variable dataPrepped. This will hold the grouped categories and answers.
+      for (var i = 0; i < data.length; i++) { // Loop through data array.
+        var newCategory = true; // Set the new category boolean to true.
+        for (var j = 0; j < dataPrepped.length; j++) { // Loop through the dataPrepped array.
+          if (dataPrepped[j].Categorie === data[i].Categorie) { // If dataPrepped holds the same category as data set newCategory to false.
             newCategory = false;
           }
         }
 
-        if (newCategory) {
+        if (newCategory) { // If newCategory is true push category and answers into the dataPrepped array.
           dataPrepped.push({
             Categorie: data[i].Categorie,
             Answers: []
           });
         }
 
-        for (var j = 0; j < dataPrepped.length; j++) {
-          if (dataPrepped[j].Categorie === data[i].Categorie) {
-            dataPrepped[j].Answers.push({
+        for (var j = 0; j < dataPrepped.length; j++) { // Loop through the dataPrepped array.
+          if (dataPrepped[j].Categorie === data[i].Categorie) { // If dataPrepped holds a category that is also in data...
+            dataPrepped[j].Answers.push({ // push Coefficients, Name, Gewicht into the Answers object inside dataPrepped.
               Coefficients: data[i].Coefficients,
               Name: data[i].Name,
               Gewicht: data[i].Gewicht
@@ -430,7 +436,7 @@ Vue.component('v-question', {
         }
         // END USE OF SOURCE
       }
-      return dataPrepped;
+      return dataPrepped; // Return the dataPrepped array.
     }
   },
   template: `
@@ -439,7 +445,7 @@ Vue.component('v-question', {
         <label>{{ data.Categorie }}</label>
         <select>
           <option>
-              {{ data.Answers.Name }}
+              {{ data.Answers }}
           </option>
         </select>
       </article>
@@ -448,6 +454,7 @@ Vue.component('v-question', {
 });
 
 // ------ VUE APP
+// Here we initiate the Vue application on the wrapper div.
 
 var vm = new Vue({
   el: '#v_app'
