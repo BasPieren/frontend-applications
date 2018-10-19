@@ -443,11 +443,11 @@ Vue.component('v-question', {
   },
   template: `
     <section class="questions">
-      <article v-for="data in mergeData">
-        <label>{{ data.Categorie }}</label>
+      <article v-for="category in mergeData">
+        <label>{{ category.Categorie }}</label>
         <select>
           <option>
-              {{ data.Answers }}
+              {{ category.Answers }}
           </option>
         </select>
       </article>
